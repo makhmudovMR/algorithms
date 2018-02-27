@@ -29,13 +29,13 @@ class MaxHeap(object):
 			max = False
 		return max
 
-	def __swap(slef, i, j):
+	def __swap(self, i, j):
 		'''Метод замены'''
-		self.heap[i], slef.heap[j] = self.heap[j], self.heap[i]
+		self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
 
 	def __floatUp(self, index):
 		'''Этот метод поднимает ноду вверх в случае если она больше родителя, до тех пор пока index больше parent'''
-		parent_index = index / 2
+		parent_index = int(index / 2)
 		if index <=1:
 			return
 		elif self.heap[index] > self.heap[parent_index]:
@@ -56,5 +56,5 @@ class MaxHeap(object):
 
 m = MaxHeap([95,3,21])
 m.push(10)
-print(str(m.heap[0:len(m.heap)]))
+print(m.heap)
 
