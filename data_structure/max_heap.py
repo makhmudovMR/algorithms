@@ -1,13 +1,14 @@
 class MaxHeap(object):
 
 	def __init__(self, items=[]):
-		super().__init__()
+		# super().__init__()
 		self.heap = [0]
 		for i in items:
 			self.heap.append(i)
 			self.__floatUp(len(self.heap)-1)
 
 	def push(self, data):
+		'''Втсаляем данные в дерево, затем сортируем дерево'''
 		self.heap.append(data)
 		self.__floatUp(len(self.heap) - 1)
 
@@ -56,5 +57,8 @@ class MaxHeap(object):
 
 m = MaxHeap([95,3,21])
 m.push(10)
+m.push(3)
+m.push(1)
 print(m.heap)
 
+print(m.peek())
